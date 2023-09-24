@@ -52,10 +52,9 @@ const config = {
       navbar: {
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            to: '/docs/start',
+            label: 'Home',
             position: 'left',
-            label: 'Tutorial',
           },
           // { to: '/blog', label: 'Blog', position: 'left' },
           {
@@ -72,7 +71,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Home',
                 to: '/docs/start',
               },
             ],
@@ -80,10 +79,6 @@ const config = {
           {
             title: 'Community',
             items: [
-              {
-                label: 'Discord',
-                href: '#',
-              },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/founderbento',
