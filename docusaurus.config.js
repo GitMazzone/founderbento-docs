@@ -58,7 +58,7 @@ const config = {
       navbar: {
         items: [
           {
-            to: '/docs/start',
+            to: '/docs/welcome',
             label: 'Home',
             position: 'left',
           },
@@ -78,7 +78,7 @@ const config = {
             items: [
               {
                 label: 'Home',
-                to: '/docs/start',
+                to: '/docs/welcome',
               },
             ],
           },

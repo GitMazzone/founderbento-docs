@@ -1,0 +1,9 @@
+{
+  "label": "Customize - Components",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Start by launching & getting feedback. Then customize and polish. Responsive, minimal components to speed up your development."
+  },
+  "collapsed": true
+}
