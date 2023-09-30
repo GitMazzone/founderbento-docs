@@ -29,7 +29,7 @@ You'll work with each of these in the tutorials to follow.
 [`loading.tsx`](https://nextjs.org/docs/app/api-reference/file-conventions/loading) - UI for loading state of a given route.  
 [`not-found.tsx`](https://nextjs.org/docs/app/api-reference/file-conventions/not-found) - UI that shows when a given route throws with the [notFound](https://nextjs.org/docs/app/api-reference/functions/not-found) function.  
 [`error.tsx`](https://nextjs.org/docs/app/api-reference/file-conventions/error) - UI error boundary to catch unexpected errors and display a fallback.  
-[`route.ts`](https://nextjs.org/docs/app/api-reference/file-conventions/route) - The new way to make API routes! Put a `route.ts` file inside of an `/app` folder.  
+[`route.ts`](https://nextjs.org/docs/app/api-reference/file-conventions/route) - The new way to make API routes! Put a `route.ts` file inside of an `/app/[routeName]` folder.  
 
 ## Config
 
