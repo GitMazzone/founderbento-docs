@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
 ---
 
 import stripeIntro from '/img/stripe-intro.webp';
@@ -7,13 +7,20 @@ import stripeUrls from '/img/stripe-urls.webp';
 import stripeBrand from '/img/stripe-brand.webp';
 import stripeEmails from '/img/stripe-emails.webp';
 import stripePortal from '/img/stripe-portal.webp';
+import stripeTestToggle from '/img/stripe-test-toggle.webp';
+import stripeTestPaymentsLink from '/img/stripe-test-payments-link.webp';
 
 # Payments
+
+## At a glance
+
+The must-do's on this page are [account setup](#setup) and [testing and development](#testing--development).  
+With these completed, you'll be able to start taking payments using FounderBento's pre-built [Pricing](#) and [BuyNow](#) components.
 
 ### Setup
 
 First you'll need to [set up a Stripe account](https://stripe.com/) if you don't have one already.  
-After validating your email, you'll land in a flow that takes 5-10 minutes.
+After validating your email, the flow takes 5-10 minutes.
 
 <img src={stripeIntro} width='700' />
 
@@ -21,28 +28,51 @@ Set your site's URLs in [public settings](https://dashboard.stripe.com/settings/
 
 <img src={stripeUrls} width='700' />
 
-Set your [brand colors and logo](https://dashboard.stripe.com/settings/branding) for things like receipts and checkout.
-
-<img src={stripeBrand} width='700' />
-
-### Checkout
-
-Simplify checkout with a no-code [customer portal](https://dashboard.stripe.com/settings/billing/portal).
+Create a [customer portal](https://dashboard.stripe.com/settings/billing/portal).
 
 <img src={stripePortal} width='700' />
 
+### Testing & development
+
+Stripe makes development wonderfully simple.  
+Use the "test" toggle to see test data on lots of pages.
+
+<img src={stripeTestToggle} width='700' />
+
+Get your `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY` from the [API keys dashboard](https://dashboard.stripe.com/test/apikeys).  
+Store these test values in `.env.local`.  
+If you used the [Vercel deployment guide](/docs/launch/deploy), you'll store the real (non-test) values as env variables in the same place you stored the Supabase keys.
+
+Make a [test payment link](https://dashboard.stripe.com/test/payment-links), which we'll use to test the payment flow end-to-end.  
+Add a product with all the fields you'll want to test. Afterwards, it'll be available under your [payment links dashboard](https://dashboard.stripe.com/test/payment-links).
+
+<img src={stripeTestPaymentsLink} width='700' />
+
+Click the product you just made and get the API ID. Add this to your [Pricing component](price_1NwHFyCVSQdRxKUDcUdoHkjx).
+
+#### TODO: [Webhooks](https://dashboard.stripe.com/test/webhooks)
+
+> What they are, which are included/handled in FounderBento, how to add endpoints, and how to test locally
+
 ### Payment methods
 
-Choose which [payment methods](https://dashboard.stripe.com/settings/payment_methods) to accept.  
+Choose which [payment methods](https://dashboard.stripe.com/settings/payment_methods) to accept.
+
+> NOTE: You'll need to set payment methods again for test mode if you added any additional options, such as buy now, pay later.
+
 Follow along with their steps on [how to integrate payment types](https://dashboard.stripe.com/settings/payments).
-
-### Customer communications
-
-Enable [emails to customers](https://dashboard.stripe.com/settings/emails) on successful payment or refund.
-
-<img src={stripeEmails} width='700' />
 
 ### Fraud & risk rules
 
 The [fraud & risk rules](https://dashboard.stripe.com/settings/radar/rules) might be unavailable for the first couple weeks after your account opens.  
 Once it's available, make sure you adjust to fit the amount of risk you're willing to take with payments.
+
+### Customization
+
+Enable [emails to customers](https://dashboard.stripe.com/settings/emails) on successful payment or refund.
+
+<img src={stripeEmails} width='700' />
+
+Set your [brand colors and logo](https://dashboard.stripe.com/settings/branding) for things like receipts and checkout.
+
+<img src={stripeBrand} width='700' />
